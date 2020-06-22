@@ -1,9 +1,21 @@
 library(tercen)
 library(dplyr)
 
-(ctx = tercenCtx())  %>% 
-  select(.y, .ci, .ri) %>% 
+do.rmsd <- function(df) {
+  
+  out <- data.frame(
+    .ci = df$.ci[1],
+    .ri = df$.ri[1],
+    rmsd = NaN
+  )
+  
+  out$rmsd <- sqrt(mean((df$.x - df$.y)^2)) 
+  return(out)
+}
+
+(ctx = tercenCtx())  %>%
+  select(.x, .y, .ci, .ri) %>%
   group_by(.ci, .ri) %>%
-  summarise(median = median(.y)) %>%
+  do(do.rmsd(.)) %>%
   ctx$addNamespace() %>%
   ctx$save()
