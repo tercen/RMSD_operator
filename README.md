@@ -15,12 +15,7 @@ Output relations|.
 ---|---
 `rmsd`        | numeric, RMSD of the input data
 
-##### Details
-
-#### References
-
 ##### See Also
 
 [lm_operator](https://github.com/tercen/lm_operator)
 
-#### Examples
