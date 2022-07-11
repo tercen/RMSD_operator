@@ -1,6 +1,10 @@
 library(tercen)
 library(dplyr)
 
+#library(tim)
+#options("tercen.workflowId" = "6015a4dd34cef273755e1a1b1500427b")
+#options("tercen.stepId"     = "d31241f6-173f-473a-9307-2b4b3c5c0882")
+
 do.rmsd <- function(df) {
   
   out <- data.frame(
@@ -13,9 +17,15 @@ do.rmsd <- function(df) {
   return(out)
 }
 
-(ctx = tercenCtx())  %>%
+ctx <- tercenCtx()
+
+df.out<- ctx  %>%
   select(.x, .y, .ci, .ri) %>%
   group_by(.ci, .ri) %>%
   do(do.rmsd(.)) %>%
-  ctx$addNamespace() %>%
+  ctx$addNamespace() 
+
+df.out%>%
   ctx$save()
+
+#tim::build_test_data(res_table = df.out, ctx = ctx, test_name = "test1")
