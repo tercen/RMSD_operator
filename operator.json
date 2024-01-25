@@ -1,10 +1,14 @@
 {
   "name": "RMSD",
   "description": "Root-Mean-Square Deviation: Calculates the differences between the values predicted by a model and the values observed.",
-  "tags": ["basic statistics"],
-  "authors": ["tercen"],
-  "urls": ["https://github.com/tercen/RMSD_operator"],
+  "tags": [
+    "descriptive statistics"
+  ],
+  "authors": [
+    "tercen"
+  ],
+  "urls": [
+    "https://github.com/tercen/RMSD_operator"
+  ],
   "properties": []
 }
-
-
