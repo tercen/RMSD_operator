@@ -1,6 +1,6 @@
 {
   "name": "RMSD",
-  "description": "Root-Mean-Square Deviation: Calculates the differences between the values predicted by a model and the values observed.",
+  "description": "Calculates the deviation of predicted values from expected values using Root-Mean-Square Deviation.",
   "tags": [
     "descriptive statistics"
   ],
