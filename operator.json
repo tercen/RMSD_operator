@@ -1,6 +1,6 @@
 {
   "name": "RMSD",
-  "description": "Calculates the deviation of predicted values from expected values using Root-Mean-Square Deviation.",
+  "description": "Returns the Relative Mean Square Deviation of two variables.",
   "tags": [
     "descriptive statistics"
   ],
@@ -10,5 +10,64 @@
   "urls": [
     "https://github.com/tercen/RMSD_operator"
   ],
-  "properties": []
+  "properties": [],
+  "operatorSpec": {
+    "kind": "OperatorSpec",
+    "ontologyUri": "https://tercen.com/_ontology/tercen",
+    "ontologyVersion": "0.0.1",
+    "inputSpecs": [
+      {
+        "kind": "CrosstabSpec",
+        "metaFactors": [
+          {
+            "kind": "MetaFactor",
+            "name": "Variable",
+            "type": "",
+            "description": "Variable identifiers (channel, marker, gene, ...)",
+            "ontologyMapping": "variable",
+            "crosstabMapping": "row",
+            "cardinality": "1..n",
+            "factors": []
+          },
+          {
+            "kind": "MetaFactor",
+            "name": "Observation",
+            "type": "",
+            "description": "Observation identifiers (event ID, sample ID, ...)",
+            "ontologyMapping": "observation",
+            "crosstabMapping": "column",
+            "cardinality": "1..n",
+            "factors": []
+          }
+        ],
+        "axis": [
+          {
+            "kind": "AxisSpec",
+            "metaFactors": [
+              {
+                "kind": "MetaFactor",
+                "name": "X Axis",
+                "type": "numeric",
+                "description": "Input x-axis values.",
+                "ontologyMapping": "x-axis",
+                "crosstabMapping": "x",
+                "cardinality": "1",
+                "factors": []
+              },
+              {
+                "kind": "MetaFactor",
+                "name": "Y Axis",
+                "type": "numeric",
+                "description": "Input y-axis values.",
+                "ontologyMapping": "y-axis",
+                "crosstabMapping": "y",
+                "cardinality": "1",
+                "factors": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
