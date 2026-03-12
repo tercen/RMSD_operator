@@ -47,7 +47,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "Y-Axis",
-                "type": "numeric",
+                "type": "double",
                 "description": "Expected values",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "y",
@@ -57,7 +57,7 @@
               {
                 "kind": "MetaFactor",
                 "name": "X-Axis",
-                "type": "numeric",
+                "type": "double",
                 "description": "Predicted values",
                 "ontologyMapping": "measurement",
                 "crosstabMapping": "x",
